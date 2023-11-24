@@ -11,11 +11,11 @@ public class TaskPatrol : Node
     public Transform transform;
     public int currDestinationIndex;
 
-    public TaskPatrol(Transform _transform, Vector3[] _destinations, UnityEngine.AI.NavMeshAgent _agent)
+    public TaskPatrol(Transform transform, Vector3[] destinations, UnityEngine.AI.NavMeshAgent agent)
     {
-        transform = _transform;
-        destinations = _destinations;
-        agent = _agent;
+        this.transform = transform;
+        this.destinations = destinations;
+        this.agent = agent;
         currDestinationIndex = 0;
     }
 
