@@ -19,17 +19,9 @@ public class TreasureController : MonoBehaviour
             Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 0.5f, 1 << 8);
             if (colliders.Length > 0)
             {
+                thief = colliders[0].gameObject;
                 isStolen = true;
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == 1 << 8)
-        {
-            isStolen = true;
-            Debug.LogFormat("Treasure was stolen");
         }
     }
 }

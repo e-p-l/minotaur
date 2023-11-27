@@ -2122,7 +2122,7 @@ NavMeshAgent:
   m_CorrespondingSourceObject: {fileID: -6155806471259679856, guid: 0d0c3a0a5593e4467bad2a44b62cda14, type: 3}
   m_PrefabInstance: {fileID: 1209204305}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1905596571
+--- !u!114 &1905596570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2131,16 +2131,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1905596567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a47bf3156c90431287846e41f51cd58, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f370dd75ab37486ba79a822c47d75d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   transform: {fileID: 1905596568}
   agent: {fileID: 1905596569}
   destinations:
-  - {x: -0.9, y: 0, z: -1.5}
-  - {x: -0.9, y: 0, z: 1.5}
-  - {x: 0.75, y: 0, z: 1.5}
-  - {x: 0.75, y: 0, z: -1.5}
+  - {x: 0.7, y: 0, z: 0.7}
+  - {x: -0.7, y: 0, z: 0.7}
+  - {x: -0.7, y: 0, z: -0.7}
+  - {x: 0.7, y: 0, z: -0.7}
   treasure: {fileID: 431839225}
 --- !u!1001 &1906938123
 PrefabInstance:

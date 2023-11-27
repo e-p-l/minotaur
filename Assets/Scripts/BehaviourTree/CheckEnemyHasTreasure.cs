@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using BehaviorTree;
+using BehaviourTree;
 
 public class CheckEnemyHasTreasure : Node
 {
@@ -17,8 +17,9 @@ public class CheckEnemyHasTreasure : Node
     {
         // set target to be the thief
         TreasureController treasureController = treasure.GetComponent<TreasureController>();
-        if(treasureController.isStolen){
-            parent.parent.SetData("target", treasureController.thief.transform);
+        if (treasureController.isStolen)
+        {
+            SetData("target", treasureController.thief);
             state = NodeState.SUCCESS;
             return state;
         }

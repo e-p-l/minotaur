@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using BehaviorTree;
+using BehaviourTree;
 
 public class CheckEnemyInFOVRange : Node
 {
-    private int layerToSearch = 1<<8;
-    private Transform transform;
+    public Transform transform;
+    public int layerToSearch = 1 << 8;
 
     public CheckEnemyInFOVRange(Transform transform)
     {
@@ -16,14 +16,15 @@ public class CheckEnemyInFOVRange : Node
 
     public override NodeState Evaluate()
     {
-        object t = GetData("target");
-        if (t == null)
+        GameObject target = GetData("target");
+
+        if (target == null)
         {
-            Collider[] colliders = Physics.OverlapSphere(
-                transform.position, 5f, layerToSearch);
+            Collider[] colliders = Physics.OverlapSphere(transform.position, 5f, layerToSearch);
             if (colliders.Length > 0)
             {
-                parent.parent.SetData("target", colliders[0].transform);
+                SetData("target", colliders[0].gameObject);
+
                 state = NodeState.SUCCESS;
                 return state;
             }

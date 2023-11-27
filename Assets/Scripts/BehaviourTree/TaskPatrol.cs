@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using BehaviorTree;
+using BehaviourTree;
 
 public class TaskPatrol : Node
 {
@@ -23,6 +23,7 @@ public class TaskPatrol : Node
     {
         // go in the direction of the next destination until it's attained, then change destination
         Vector3 currDestination = destinations[currDestinationIndex];
+
         if (Vector3.Distance(transform.position, currDestination) < 0.6f)
         {
             currDestinationIndex = (currDestinationIndex + 1) % destinations.Length;

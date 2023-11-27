@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using BehaviorTree;
+using BehaviourTree;
 
 public class CheckEnemyInAttackRange : Node
 {
     private Transform transform;
- 
+
     public CheckEnemyInAttackRange(Transform transform)
     {
         this.transform = transform;
@@ -15,22 +15,24 @@ public class CheckEnemyInAttackRange : Node
 
     public override NodeState Evaluate()
     {
-        object t = GetData("target");
-        if (t == null)
+        GameObject target = GetData("target");
+
+        if (target == null)
         {
             state = NodeState.FAILURE;
             return state;
         }
 
-        Transform target = (Transform)t;
-        if (Vector3.Distance(transform.position, target.position) <= 1.5f)
+        if (Vector3.Distance(transform.position, target.transform.position) <= 1.5f)
         {
             state = NodeState.SUCCESS;
             return state;
         }
-
-        state = NodeState.FAILURE;
-        return state;
+        else
+        {
+            state = NodeState.FAILURE;
+            return state;
+        }
     }
 
 }
