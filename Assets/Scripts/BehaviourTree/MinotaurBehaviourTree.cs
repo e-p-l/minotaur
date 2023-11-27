@@ -50,8 +50,8 @@ namespace BehaviourTree
                     new CheckIsCloseToTreasure(transform, treasure),
                     new TaskGoToTarget(transform, agent),
                 }),
-                //patrol if all checks were false 
-                new TaskPatrol(transform, destinations, agent),
+                //idle if all checks were false 
+                new TaskIdle(transform, agent, treasure),
             });
 
             root.isRoot = true;
