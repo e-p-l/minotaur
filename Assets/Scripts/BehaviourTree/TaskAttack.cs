@@ -16,7 +16,6 @@ public class TaskAttack : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("TaskAttack");
         GameObject target = GetData("target");
 
         timer += Time.deltaTime;

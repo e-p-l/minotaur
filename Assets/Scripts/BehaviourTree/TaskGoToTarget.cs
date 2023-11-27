@@ -17,7 +17,6 @@ public class TaskGoToTarget : Node
 
     public override NodeState Evaluate()
     {
-        Debug.Log("TaskGoToTarget");
         GameObject target = GetData("target");
 
         if (Vector3.Distance(transform.position, target.transform.position) > 0.6f)
