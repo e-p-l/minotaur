@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using BehaviorTree;
+using BehaviourTree;
 
 public class TaskGoToTarget : Node
 {
@@ -17,11 +17,11 @@ public class TaskGoToTarget : Node
 
     public override NodeState Evaluate()
     {
-        Transform target = (Transform)GetData("target");
+        GameObject target = GetData("target");
 
-        if (Vector3.Distance(transform.position, target.position) > 0.6f)
+        if (Vector3.Distance(transform.position, target.transform.position) > 0.6f)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target.transform.position);
         }
 
         state = NodeState.RUNNING;
