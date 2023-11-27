@@ -8,10 +8,10 @@ namespace BehaviourTree
     {
         public Transform transform;
         public UnityEngine.AI.NavMeshAgent agent;
-        public Vector3[] destinations;
         public GameObject treasure;
         public Node root = null;
         public GameObject[] enemies;
+        public GameObject attack;
 
         public void Start()
         {
@@ -32,7 +32,7 @@ namespace BehaviourTree
                 //check if an adventurer is in attack range
                 new Sequence(new List<Node>{
                     new CheckEnemyInAttackRange(transform),
-                    new TaskAttack(),
+                    new TaskAttack(attack, transform),
                 }),
                 //check if the minotaur is being attacked
                 new Sequence(new List<Node>{

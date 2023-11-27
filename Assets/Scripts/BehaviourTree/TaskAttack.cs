@@ -8,10 +8,14 @@ public class TaskAttack : Node
 {
     private float cooldown = 1f;
     private float timer;
+    private Transform transform;
+    private GameObject attack;
 
-    public TaskAttack()
+    public TaskAttack(GameObject attack, Transform transform)
     {
         this.timer = 0f;
+        this.attack = attack;
+        this.transform = transform;
     }
 
     public override NodeState Evaluate()
@@ -21,7 +25,8 @@ public class TaskAttack : Node
         timer += Time.deltaTime;
         if (timer >= cooldown)
         {
-            Debug.Log("Minotaur ATTACKS : BOOOM!");
+            GameObject aoe = Object.Instantiate(attack, transform);
+            Object.Destroy(aoe, 0.7f); 
             timer = 0f;
         }
 

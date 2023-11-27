@@ -23,7 +23,7 @@ public class CheckEnemyInAttackRange : Node
             return state;
         }
 
-        if (Vector3.Distance(transform.position, target.transform.position) <= 1.5f)
+        if (Vector3.Distance(transform.position, target.transform.position) <= 2f)
         {
             state = NodeState.SUCCESS;
             return state;
