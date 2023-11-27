@@ -4,12 +4,12 @@ using UnityEngine;
 
 using BehaviourTree;
 
-public class CheckEnemyInFOVRange : Node
+public class CheckEnemyClose: Node
 {
     public Transform transform;
     public int layerToSearch = 1 << 8;
 
-    public CheckEnemyInFOVRange(Transform transform)
+    public CheckEnemyClose(Transform transform)
     {
         this.transform = transform;
     }

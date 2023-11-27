@@ -11,6 +11,7 @@ namespace BehaviourTree
         public Vector3[] destinations;
         public GameObject treasure;
         public Node root = null;
+        public GameObject[] enemies;
 
         public void Start()
         {
@@ -25,22 +26,31 @@ namespace BehaviourTree
             }
         }
 
-        // Build the behaviour tree
         public Node BuildTree()
         {
             Node root = new Selector(new List<Node> {
-                new Sequence(new List<Node> {
-                    new CheckEnemyHasTreasure(treasure),
-                    new TaskGoToTarget(transform, agent),
-                }),
-                new Sequence(new List<Node> {
+                //check if an adventurer is in attack range
+                new Sequence(new List<Node>{
                     new CheckEnemyInAttackRange(transform),
                     new TaskAttack(),
                 }),
-                new Sequence(new List<Node> {
-                    new CheckEnemyInFOVRange(transform),
+                //check if the minotaur is being attacked
+                new Sequence(new List<Node>{
+                    new CheckEnemyIsAttacking(enemies),
                     new TaskGoToTarget(transform, agent),
                 }),
+                //check if someone has the treasure
+                new Sequence(new List<Node>{
+                    new CheckEnemyHasTreasure(treasure),
+                    new TaskGoToTarget(transform, agent),
+                }),
+                //check if someone is close to the minotaur
+                new Sequence(new List<Node>{
+                    new CheckEnemyClose(transform),
+                    new CheckIsCloseToTreasure(transform, treasure),
+                    new TaskGoToTarget(transform, agent),
+                }),
+                //patrol if all checks were false 
                 new TaskPatrol(transform, destinations, agent),
             });
 
