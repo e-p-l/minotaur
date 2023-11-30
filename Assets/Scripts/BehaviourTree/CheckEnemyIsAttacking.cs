@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using HTN;
 using BehaviourTree;
 
 public class CheckEnemyIsAttacking : Node
@@ -16,8 +16,8 @@ public class CheckEnemyIsAttacking : Node
     public override NodeState Evaluate()
     {
         foreach (GameObject enemy in this.enemies){
-            AdventurerController adventurerController = enemy.GetComponent<AdventurerController>();
-            if (adventurerController.isAttacking){
+            TankController tankController = enemy.GetComponent<TankController>();
+            if (tankController.isAttacking){
                 SetData("target", enemy);
 
                 state = NodeState.SUCCESS;

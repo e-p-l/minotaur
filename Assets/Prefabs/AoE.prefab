@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7254377628527672154}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AoE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 812575614075369846}
   - component: {fileID: 4820206205674420447}
   - component: {fileID: 6082563892655724688}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
