@@ -49,7 +49,7 @@ The simulation is designed in a way that the adventurers win most of the time, b
 
 Don't mind the very primitive character/maze design, I focus on the behaviour of the characters :)
 
-Here's is one of the possible scenarios where 3 of the adventurers (1 melee and 1 ranged) attack the minotaur at the same time to distract him while the 4th adventurer steals the treasure and brings it back to it's corner.
+Here's is one of the possible scenarios where 3 of the adventurers (2 melee and 1 ranged) attack the minotaur at the same time to distract him while the 4th adventurer steals the treasure and brings it back to it's corner.
 
 
 
